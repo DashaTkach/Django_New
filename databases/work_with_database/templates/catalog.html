@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1><a href="/catalog">Каталог</a></h1>
+    </div>
+
+    <div class="sort-block">
+        {# Здесь должен быть раздел с сортировкой #}
+    </div>
+
+    <div class="content">
+        {% for phone in dict_phones %}
+        <div class="phone">
+            <h3>{{ phone.name }}</h3>
+            <div class="price">Стоимость: {{ phone.price }} ₽</div>
+            <img height="400" src="{{ phone.image }}" alt="{{ phone.name }}"/>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
