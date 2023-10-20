@@ -10,11 +10,11 @@ class SectionPositionInLine(admin.TabularInline):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'text', 'published_at', 'image']
+    list_display = ['title', 'text', 'published_at', 'image', ]
     list_filter = ['published_at']
+    inlines = [SectionPositionInLine, ]
 
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
-    list_display = ['id']
-    inlines = [SectionPositionInLine, ]
+    list_display = ['name', ]
